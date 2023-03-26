@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>topview_demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box_homepage {
+            background-image: linear-gradient(to right, #3e2e87, #2994a4);
+            height: 860px;
+            color: #fefeff;
+            position: relative;
+        }
+
+        .nav {
+            height: 110px;
+            width: 1200px;
+            text-align: left;
+            display: inline-block;
+            
+
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .title_1st_name,
+        .space,
+        .title_end_name {
+            display: inline-block;
+            font-family: 'Microsoft Yahei';
+            color: #fefeff;
+            text-align: center;
+        }
+
+        .title_1st_name {
+            font-weight: 700;
+
+        }
+
+        .title_name {
+            display: inline-block;
+            font-size: 24px;
+            background-image: url(assets/small-logo.png);
+            background-repeat: no-repeat;
+            background-size: 65px, 60px;
+            height: 110px;
+            line-height: 110px;
+            background-position: 20px;
+        }
+
+        .space {
+            width: 30px;
+
+        }
+
+        .nav_tools {
+            float: right;
+            margin-top: 45px;
+        }
+
+        .home,
+        .about,
+        .services,
+        .blog,
+        .search,
+        .more,
+        .contact_us {
+            float: left;
+            margin-left: 40px;
+            cursor: pointer;
+        }
+
+        .homepage_bottom {
+            background-image: url(assets/edge-1.png);
+            text-align: center;
+            height: 100px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            /* background-size: auto 50px; */
+            position: absolute;
+            bottom: -10px;
+
+
+        }
+
+        .page1_title {
+            text-align: center;
+        }
+
+        .page1_head {
+            font-size: 50px;
+
+        }
+
+        .page1_p {
+            font-size: 18px;
+        }
+
+        .form {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #252667;
+            width: 876px;
+            height: 60px;
+            line-height: 57px;
+            /* align-items: center; */
+        }
+
+        .web_url {
+            width: 434px;
+            height: 50px;
+            line-height: 70px;
+            background-color: #eaeff3;
+            border:0px;
+        }
+
+        .email {
+            width: 211px;
+            height: 50px;
+            background-color: #eaeff3;
+            border:0px;
+        }
+
+        .page1_button {
+            background-color: #f96d49;
+            width: 210px;
+            height: 50px;
+            color: #fefeff;
+            font-weight: 700;
+            border:0px;
+        }
+
+        .page1_img {
+            margin-top: 20px;
+        }
+
+        .content_page {
+            display: block;
+            text-align: center;
+        }
+
+        .title {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        .content1,
+        .content2,
+        .content3 {
+            display: inline-block;
+            width: 370px;
+            height: 445px;
+
+        }
+
+        .content1 {
+            background-color: #08c8af;
+            margin: -5px;
+
+        }
+
+        .content2 {
+            background-color: #f96d49;
+            margin: -5px;
+
+        }
+
+        .content3 {
+            background-color: #41acf4;
+            margin: -5px;
+        }
+
+        #learnpj,
+        #raxblefy,
+        #how_box {
+            width: 470px;
+            height: 480px;
+            display: inline-block;
+
+
+
+        }
+
+        #how_box {
+            background-color: #f96d49;
+            text-align: center;
+            overflow: hidden;
+            margin-left: 75px;
+            margin-right: 75px;
+
+        }
+
+        #work_way {
+            margin-top: 150px;
+            /* height: 480px; */
+
+
+        }
+
+        #how_h1 {
+            margin-top: 50px;
+            color: #fff3ef;
+            font-size: 40px;
+            font-weight: 400;
+
+
+        }
+
+        #how_p {
+            color: #fff3ef;
+            font-size: 20px;
+        }
+
+        #player {
+            height: 150px;
+            width: 150px;
+            background-image: url(assets/play-l.png), url(assets/round.png);
+            background-repeat: no-repeat, no-repeat;
+            background-position: center;
+            background-size: 100px 100px, 120px 120px;
+            opacity: 0, 0.9;
+            text-align: center;
+            display: inline-block;
+
+
+        }
+
+        .checkmark,
+        .checkmark_des {
+            display: inline-block;
+
+        }
+
+        #learnpj,
+        #raxblefy {
+            text-align: left;
+            overflow: hidden;
+
+        }
+
+        .step_start {
+
+            float: left;
+            width: 80px;
+            height: 80px;
+            background-image: url(assets/back-icon-2.png);
+            background-repeat: no-repeat;
+            text-align: center;
+            line-height: 80px;
+            margin-top: 50px;
+
+        }
+
+        #on-the-left {
+            display: inline-block;
+            width: 175px;
+            height: 125px;
+            background-image: url(assets/on-the-left.png);
+            margin-top: 50px;
+        }
+
+        #on-the-right {
+            display: inline-block;
+            width: 175px;
+            height: 125px;
+            background-image: url(assets/on-the-right.png);
+            margin-top: 50px;
+            ;
+        }
+
+        .leftandright_h4 {
+            margin-top: 35px;
+            font-size: 22px;
+        }
+
+        .leftandright_p {
+            color: #999999;
+            margin: 20px 0;
+        }
+
+        .leftandright_li {
+            margin-bottom: 20px;
+        }
+
+        #feature {
+            margin-top: 90px;
+
+        }
+
+        .feature {
+            display: inline-block;
+            width: 300px;
+            height: 350px;
+        }
+
+        .background_round {
+            width: 150px;
+            height: 125px;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            display: inline-block;
+            transform: rotate(45deg);
+            transition: transform 2s;
+        }
+
+        .feature_img {
+            text-align: center;
+            margin-top: 30px;
+            transition: transform 2s;
+        }
+
+        .background_round:hover {
+
+            transform: rotate(-150deg);
+        }
+
+        .feature_img:hover {
+            transform: rotate(150deg);
+        }
+
+        .feature_h3 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .feature_p {
+            line-height: 20px;
+            color: #999999;
+        }
+
+        #peaple {
+            /* position:relative; */
+            /* width: 100%;  */
+            width: 2000px;
+            height: 680px;
+            background-image: url(assets/back-icon-3.png);
+            background-size: 49%;
+            /* background-position: center; */
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
+
+        #logo-head {
+            /* position: absolute;
+            top:5%;
+            left:30%;
+            text-align: center; */
+            display: block;
+            text-align: left;
+            margin-left: 578px;
+            margin-top: 62px;
+        }
+
+        #peaple_title_logo {
+            text-align: center;
+            margin-left: 180px;
+        }
+
+        .peaple_logo {
+            border-radius: 50%;
+            display: inline-block;
+            text-align: left;
+            position: absolute;
+            /* position: absolute; */
+        }
+
+        #people_box {
+            /* text-align: left; */
+            position: relative;
+        }
+
+        #peaple1 {
+            background-image: url(assets/people-1.jpg);
+            top: 45px;
+            left: 646px;
+            width: 100px;
+            height: 100px;
+            /* margin-left:500px;
+            margin-top:45px; */
+        }
+
+        #peaple2 {
+            background-image: url(assets/people-2.jpg);
+            top: 80px;
+            left: 812px;
+            ;
+            width: 80px;
+            height: 80px;
+            background-repeat: no-repeat;
+        }
+
+        #peaple3 {
+            background-image: url(assets/people-3.jpg);
+            top: 100px;
+            left: 486px;
+            width: 80px;
+            height: 80px;
+            background-repeat: no-repeat;
+        }
+
+        #peaple4 {
+            background-image: url(assets/people-4.jpg);
+            top: 217px;
+            left: 633px;
+            width: 80px;
+            height: 80px;
+            background-repeat: no-repeat;
+        }
+
+        #peaple5 {
+            background-image: url(assets/people-5.jpg);
+            top: 307px;
+            left: 503px;
+            ;
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+        }
+
+        #peaple6 {
+            background-image: url(assets/people-6.jpg);
+            top: 227px;
+            left: 824px;
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+        }
+
+        #peaple7 {
+            background-image: url(assets/people-7.jpg);
+            top: 344px;
+            left: 713px;
+            width: 80px;
+            height: 80px;
+            background-repeat: no-repeat;
+        }
+
+        #flex_box {
+            display: flex;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .flex_content {
+            display: inline-block;
+            width: 355px;
+            height: 600px;
+            margin: 20px;
+        }
+
+        .flex_img {
+            display: inline-block;
+            width: 355px;
+            height: 295px;
+        }
+
+        .time {
+            color: #999999;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .head_text {
+            background-image: url(assets/back-icon-2.png);
+            background-repeat: no-repeat;
+        }
+
+        .descri {
+            color: #9d9d9d;
+            font-size: 15px;
+            line-height: 20px;
+            margin: 25px 0;
+        }
+
+        .text,
+        .arrow {
+            display: inline-block;
+        }
+
+
+        #flex_img1 {
+            background-image: url(assets/news-1.jpg);
+        }
+
+        #flex_img2 {
+            background-image: url(assets/news-2.jpg);
+        }
+
+        #flex_img3 {
+            background-image: url(assets/news-3.jpg);
+        }
+
+        #footer {
+            width: 2000px;
+            height:600px;
+            display: inline-block;
+            background-image: url(assets/mydraw_footer\(1\).png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        #welcome_box {
+            width: 1120px;
+            height:170px;
+            display:flex;
+            border-top:5px solid #4cd1c0;
+            background-color: white;
+            text-align: center;
+
+        }
+        #text_span {
+            text-align: left;
+            margin-top:50px;
+            margin-left: 60px;
+        }
+        #footer_button {
+            width: 200px;
+            height: 55px;
+            color:#eaeff3;
+            background-color: #f96d49;
+        }
+        #button_span {
+            margin-top:58px;
+            margin-left:257px;
+
+        }
+        #footer_content {
+            display: flex;
+            justify-content: center;
+        }
+        #footer_logo_box {
+            display: inline-block;
+            width: 250px;
+            height: 200px;
+            margin-top:50px;
+            text-align: left;
+            font-size: 12px;
+            
+        }
+        .muchlogo {
+            display: inline-block;
+            width:30px;
+            height: 30px;
+            margin-top:20px;
+        }
+        .footer_h2 {
+            color:#fefeff;
+        }
+        .footer_p {
+            color:#9d9d9d;
+            line-height: 35px;
+        }
+        .footer_content_box {
+            margin:50px;
+            margin-right:78px;
+            text-align: left;
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <div class="box_homepage">
+        <div id="nav_to_center" style="text-align: center;"><div class="nav">
+            <span class="title_name">
+                <li class="title_1st_name">RA</li>
+                <li class="space"></li>
+                <li class="title_end_name">BLE</li>
+            </span>
+            <li class="nav_tools">
+                <span class="home">Home</span>
+                <span class="about">About</span>
+                <span class="services">Services</span>
+                <span class="blog">Blog</span>
+                <span class="contact_us">Contect us</span>
+                <span class="search">
+                    <img src="assets/search.png" alt="" width="20px" height="20px">
+                </span>
+                <span class="more">
+                    <img src="assets/learnmore.png" alt="" width="20px" height="20px">
+                </span>
+            </li>
+        </div></div>
+        
+
+        <div class="page1_title">
+            <h1 class="page1_head">Decorate Your Website</h1>
+            <p class="page1_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue
+                massa. </p>
+            <li class="form">
+                <input type="text" class="web_url" placeholder="   Your Webiste URL">
+                <input type="text" class="email" placeholder="   Email">
+                <button class="page1_button" type="button">GET FREE REPORT</button>
+            </li>
+            <br>
+            <img src="assets/content-image-2.png" alt="" class="page1_img">
+        </div>
+        <div class="homepage_bottom"></div>
+
+    </div>
+
+    <div class="content_page">
+        <div class="title">
+            <img class="small_logo" src="assets/small-logo.png" style="margin-top:10px;">
+            <p class="p">UPGRADE YOUR ECONOEY MODE</p>
+            <h1 class="h1">Your Team Get Sharped <br>For More Outcomes</h1>
+        </div>
+        <div class="dad_content">
+            <div class="content1">
+                <img src="assets/icon-one.png" alt="" style="margin-top:50px;">
+                <h4 style="color:#fefeff">Speed Up</h4>
+                <p style="font-size:8px;color:#fefeff;display:inline-block;width:250px;margin-top:20px;">Lorem ipsum
+                    dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+            </div>
+            <div class="content2">
+                <img src="assets/icon-two.png" alt="" style="margin-top:50px;">
+                <h4 style="color:#fefeff">Corresponding issues</h4>
+                <p style="font-size:8px;color:#fefeff;display:inline-block;width:250px;margin-top:20px;">Lorem ipsum
+                    dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+            </div>
+            <div class="content3">
+                <img src="assets/icon-three.png" alt="" style="margin-top:50px;">
+                <h4 style="color:#fefeff">Performance Up</h4>
+                <p style="font-size:8px;color:#fefeff;display:inline-block;width:250px;margin-top:20px;">Lorem ipsum
+                    dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+            </div>
+        </div>
+        <div class="dad_content" id="work_way">
+            <div id="learnpj">
+                <span class="step_start">Step1</span>
+                <!-- <img src="assets/back-icon-2.png" alt=""> -->
+                <!-- <img src="assets/on-the-left.png" alt=""> -->
+                <span id="on-the-left"></span>
+                <h4 class="leftandright_h4">Learn Your Project</h4>
+                <p class="leftandright_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                <li class="leftandright_li">
+                    <img src="assets/checkmark-round.png" alt="" class="checkmark">
+                    <p class="checkmark_des">Customizable Service</p>
+                </li>
+                <li class="leftandright_li">
+                    <img src="assets/checkmark-round.png" alt="" class="checkmark">
+                    <p class="checkmark_des">Management Solutions</p>
+                </li>
+                <li class="leftandright_li">
+                    <img src="assets/checkmark-round.png" alt="" class="checkmark">
+                    <p class="checkmark_des">Dominating with RaXble</p>
+                </li>
+                <li class="leftandright_li">
+                    <img src="assets/checkmark-round.png" alt="" class="checkmark">
+                    <p class="checkmark_des">Complete Training AI</p>
+                </li>
+            </div>
+            <div id="how_box">
+                <h1 id="how_h1">How to Work<br>with RaXble</h1>
+                <div id="player"></div>
+                <p id="how_p">Watch its Process</p>
+            </div>
+
+            <div id="raxblefy">
+                <span class="step_start">Step2</span>
+                <!-- <img src="assets/back-icon-2.png" alt=""> -->
+                <span id="on-the-right"></span>
+                <h4 class="leftandright_h4">RAXBLE is Working For You</h4>
+                <p class="leftandright_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                <li class="leftandright_li">
+                    <img src="assets/checkmark-round.png" alt="" class="checkmark">
+                    <p class="checkmark_des">Customizable Service</p>
+                </li>
+                <li class="leftandright_li">
+                    <img src="assets/checkmark-round.png" alt="" class="checkmark">
+                    <p class="checkmark_des">Management Solutions</p>
+                </li>
+                <li class="leftandright_li">
+                    <img src="assets/checkmark-round.png" alt="" class="checkmark">
+                    <p class="checkmark_des">Dominating with RaXble</p>
+                </li>
+                <li class="leftandright_li">
+                    <img src="assets/checkmark-round.png" alt="" class="checkmark">
+                    <p class="checkmark_des">Complete Training AI</p>
+                </li>
+            </div>
+        </div>
+        <div class="dad_content" id="multiple_features">
+            <div class="title" id="2nd_title">
+                <img class="small_logo" src="assets/small-logo.png" style="margin-top:10px;">
+                <h1 class="h1">Muitiple Features</h1>
+                <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <br>Maecenas porttitor congue
+                    massa. Fusce posuere</p>
+            </div>
+
+            <div id="feature">
+                <div class="feature">
+                    <div class="background_round">
+                        <img src="assets/round-icon-1.png" alt="" class="feature_img">
+                    </div>
+
+                    <h3 class="feature_h3">Speed Up</h3>
+                    <p class="feature_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                        congue massa. Fusce posuere</p>
+                </div>
+                <div class="feature">
+                    <div class="background_round">
+                        <img src="assets/round-icon-2.png" alt="" class="feature_img">
+                    </div>
+
+                    <h3 class="feature_h3">Powerful Estimate</h3>
+                    <p class="feature_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                        congue massa. Fusce posuere</p>
+                </div>
+                <div class="feature">
+                    <div class="background_round">
+                        <img src="assets/round-icon-3.png" alt="" class="feature_img">
+                    </div>
+
+                    <h3 class="feature_h3">Best Course</h3>
+                    <p class="feature_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                        congue massa. Fusce posuere</p>
+                </div>
+                <br>
+                <div class="feature">
+                    <div class="background_round">
+                        <img src="assets/round-icon-4.png" alt="" class="feature_img">
+                    </div>
+
+                    <h3 class="feature_h3">See Expertise</h3>
+                    <p class="feature_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                        congue massa. Fusce posuere</p>
+                </div>
+                <div class="feature">
+                    <div class="background_round">
+                        <img src="assets/round-icon-5.png" alt="" class="feature_img">
+                    </div>
+
+                    <h3 class="feature_h3">Good Trade</h3>
+                    <p class="feature_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                        congue massa. Fusce posuere</p>
+                </div>
+                <div class="feature">
+                    <div class="background_round">
+                        <img src="assets/round-icon-6.png" alt="" class="feature_img">
+                    </div>
+
+                    <h3 class="feature_h3">Strike Precisely</h3>
+                    <p class="feature_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                        congue massa. Fusce posuere</p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="dad_content" id="peaple">
+
+            <div id="logo-head">
+                <img src="assets/small-logo.png" alt="" id="peaple_title_logo">
+                <h1 id="peaple_head">What Clients Responded</h1>
+            </div>
+            <div id="people_box">
+                <div id="peaple1" class="peaple_logo"></div>
+                <div id="peaple2" class="peaple_logo"></div>
+                <div id="peaple3" class="peaple_logo"></div>
+                <div id="peaple4" class="peaple_logo"></div>
+                <div id="peaple5" class="peaple_logo"></div>
+                <div id="peaple6" class="peaple_logo"></div>
+                <div id="peaple7" class="peaple_logo"></div>
+            </div>
+
+
+
+        </div>
+        <div class="dad_content" id="top_trend_news">
+            <div>
+                <img src="assets/small-logo.png" alt="">
+                <h1>Top Trending News</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                    <br>. Maecenas porttitor congue massa. Fusce posuere
+                </p>
+
+            </div>
+            <div id="flex_box">
+                <span id="flex_content1" class="flex_content">
+                    <span id="flex_img1" class="flex_img"></span>
+                    <p class="time">March 31,2023 Optical</p>
+                    <h3 class="head_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h3>
+                    <p class="descri">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                        congue massa. </p>
+                    <span class="learn_more">
+                        <p class="text">Read More</p>
+                        <p class="arrow">→</p>
+                    </span>
+                </span>
+                <span id="flex_content2" class="flex_content">
+                    <span id="flex_img2" class="flex_img"></span>
+                    <p class="time">March 31,2023 Optical</p>
+                    <h3 class="head_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h3>
+                    <p class="descri">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                        congue massa. </p>
+                    <span class="learn_more">
+                        <p class="text">Read More</p>
+                        <p class="arrow">→</p>
+                    </span>
+                </span>
+                <span id="flex_content3" class="flex_content">
+                    <span id="flex_img3" class="flex_img"></span>
+                    <p class="time">March 31,2023 Optical</p>
+                    <h3 class="head_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h3>
+                    <p class="descri">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor
+                        congue massa. </p>
+                    <span class="learn_more">
+                        <p class="text">Read More</p>
+                        <p class="arrow">→</p>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="dad_content" id="footer">
+            <div style="display:inline-block;text-align:center;"><div id="welcome_box">
+                <span id="text_span">
+                    <h2>Let's Learn Your Next Website</h2>
+                    <p class="descri">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+                </span>
+                <span id="button_span">
+                    <button type="button" class="button" id="footer_button">Discuss With Us</button>
+                </span>
+            </div></div>
+            
+            <div id="footer_content">
+                <span id="footer_logo_box">
+                    <img id="footer_logo" src="assets/logo.png">
+                    <p style="color:#9d9d9d">Copyrights 2023 All Rights Reserved</p>
+                    <img src="assets/推特_twitter44.png" alt="" class="muchlogo">
+                    <img src="assets/facebook.png" alt="" class="muchlogo">
+                    <img src="assets/in.png" alt="" class="muchlogo">
+                    <img src="assets/googleplus.png" alt="" class="muchlogo">
+                    <img src="assets/dribbble.png" alt="" class="muchlogo">
+                </span>
+                <span class="footer_content_box" id="company">
+                    <h2 class="footer_h2">Company</h2>
+                    <p class="footer_p">About us</p>
+                    <p class="footer_p">Contact us</p>
+                    <p class="footer_p">Join us</p>
+                    <p class="footer_p">Our lives</p>
+                    <p class="footer_p">Current Ideas</p>
+                </span>
+                <span class="footer_content_box" id="our_services">
+                    <h2 class="footer_h2">Our Services</h2>
+                    <p class="footer_p">Outsourcing</p>
+                    <p class="footer_p">Abbreviated Dialing</p>
+                    <p class="footer_p">Heuristic Reasoning</p>
+                    <p class="footer_p">Absolute Addressing</p>
+                    <p class="footer_p">Multimedia</p>
+                    <p class="footer_p">CMOS Work</p>
+                </span>
+                <span class="footer_content_box" id="contact_us">
+                    <h2 class="footer_h2">Contact Us</h2>
+                    <p class="footer_p">3434 Safari Court, Los</p>
+                    <p class="footer_p">Syntax 12901</p>
+                    <p class="footer_p">Phone:+1712-168-2209</p>
+                    <p class="footer_p">Email:support@rax-ble.com</p>
+                </span>
+            </div>
+        </div>
+    </div>>
+</body>
+
+</html>
